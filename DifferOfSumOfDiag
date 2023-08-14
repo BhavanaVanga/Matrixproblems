@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+ int PrintDifferOfSumOfDiag(vector<vector<int>>&v,int n)
+{
+	int sum1=0,sum2=0;
+	for(int i=0;i<n;i++)
+	{
+		sum1+=v[i][i];
+		sum2+=v[i][n-i-1];
+	}
+	return abs(sum1-sum2);
+}
+	int main() {
+	// your code goes here
+   int n;
+   cin>>n;
+   vector<vector<int>>v(n,vector<int>(n));
+   for(int i=0;i<n;i++){
+   	for(int j=0;j<n;j++)
+   	{
+   		cin>>v[i][j];
+   	}
+   	
+   }
+   cout<<PrintDifferOfSumOfDiag(v,n);
+	return 0;
+}
